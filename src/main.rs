@@ -1,11 +1,15 @@
 use yew::prelude::*;
 
-use crate::components::log_button::LogButton;
 use crate::components::basic_container::BasicContainer;
+use crate::components::log_button::LogButton;
 
 mod components {
-    pub mod log_button;
     pub mod basic_container;
+    pub mod log_button;
+}
+
+mod views {
+    pub mod game_of_life;
 }
 
 #[function_component(App)]

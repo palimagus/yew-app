@@ -139,6 +139,22 @@ dependencies = [
 
 [[package]]
 name = "gloo"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23947965eee55e3e97a5cd142dd4c10631cc349b48cecca0ed230fd296f568cd"
+dependencies = [
+ "gloo-console",
+ "gloo-dialogs",
+ "gloo-events",
+ "gloo-file",
+ "gloo-render",
+ "gloo-storage",
+ "gloo-timers",
+ "gloo-utils",
+]
+
+[[package]]
+name = "gloo"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3a4bef6b277b3ab073253d4bca60761240cf8d6998f4bd142211957b69a61b20"
@@ -352,6 +368,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "lazy_static"
+version = "1.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+
+[[package]]
 name = "libc"
 version = "0.2.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -473,9 +495,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.50"
+version = "1.0.51"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ef7d57beacfaf2d8aee5937dab7b7f28de3cb8b1828479bb5de2a7106f2bae2"
+checksum = "5d727cae5b39d21da60fa540906919ad737832fe0b1c165da3a34d6548c849d6"
 dependencies = [
  "unicode-ident",
 ]
@@ -487,7 +509,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "03b55e106e5791fa5a13abd13c85d6127312e8e09098059ca2bc9b03ca4cf488"
 dependencies = [
  "futures",
- "gloo",
+ "gloo 0.8.0",
  "num_cpus",
  "once_cell",
  "pin-project",
@@ -517,6 +539,12 @@ name = "ryu"
 version = "1.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b4b9743ed687d4b4bcedf9ff5eaa7398495ae14e61cba0a295704edbc7decde"
+
+[[package]]
+name = "scoped-tls-hkt"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c2e9d7eaddb227e8fbaaa71136ae0e1e913ca159b86c7da82f3e8f0044ad3a63"
 
 [[package]]
 name = "serde"
@@ -551,9 +579,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.91"
+version = "1.0.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "877c235533714907a8c2464236f5c4b2a17262ef1bd71f38f35ea592c8da6883"
+checksum = "cad406b69c91885b5107daf2c29572f6c8cdb3c66826821e286c533490c0bc76"
 dependencies = [
  "itoa",
  "ryu",
@@ -813,13 +841,32 @@ checksum = "447660ad36a13288b1db4d4248e857b510e8c3a225c822ba4fb748c0aafecffd"
 
 [[package]]
 name = "yew"
+version = "0.19.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2a1ccb53e57d3f7d847338cf5758befa811cabe207df07f543c06f502f9998cd"
+dependencies = [
+ "console_error_panic_hook",
+ "gloo 0.4.2",
+ "gloo-utils",
+ "indexmap",
+ "js-sys",
+ "scoped-tls-hkt",
+ "slab",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "yew-macro 0.19.3",
+]
+
+[[package]]
+name = "yew"
 version = "0.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5dbecfe44343b70cc2932c3eb445425969ae21754a8ab3a0966981c1cf7af1cc"
 dependencies = [
  "console_error_panic_hook",
  "futures",
- "gloo",
+ "gloo 0.8.0",
  "implicit-clone",
  "indexmap",
  "js-sys",
@@ -833,7 +880,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
- "yew-macro",
+ "yew-macro 0.20.0",
 ]
 
 [[package]]
@@ -842,8 +889,35 @@ version = "0.1.0"
 dependencies = [
  "wasm-bindgen",
  "web-sys",
- "yew",
+ "yew 0.20.0",
+ "yew-canvas",
  "yew_icons",
+]
+
+[[package]]
+name = "yew-canvas"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6327a619ea6b089ae3228ff349e23c76af9609a4c6ede85807f28aad6a5caf86"
+dependencies = [
+ "gloo 0.8.0",
+ "wasm-bindgen",
+ "web-sys",
+ "yew 0.19.3",
+]
+
+[[package]]
+name = "yew-macro"
+version = "0.19.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5fab79082b556d768d6e21811869c761893f0450e1d550a67892b9bce303b7bb"
+dependencies = [
+ "boolinator",
+ "lazy_static",
+ "proc-macro-error",
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -867,5 +941,5 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0601d9e0dc6fbf88663d0a92c3aaa9ad5f5f8a3bf7866f563ed232e6de5d2793"
 dependencies = [
- "yew",
+ "yew 0.20.0",
 ]
