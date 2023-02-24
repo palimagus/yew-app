@@ -1,6 +1,7 @@
-use web_sys::console;
-use yew::{classes, function_component, html, AttrValue, Callback, Html, Properties};
+use yew::prelude::*;
 use yew_icons::{Icon, IconId};
+
+use gloo_console::log;
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -15,7 +16,7 @@ pub fn LogButton(props: &Props) -> Html {
     let message = props.message.clone();
     let onclick = Callback::from(move |_| {
         let log = format!("[LOG] {}", message);
-        console::log_1(&log.into());
+        log!(log);
     });
 
     let log_button_classes =
