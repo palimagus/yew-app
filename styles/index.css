@@ -2,14 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Fira Sans";
+  src: url("/assets/Fira_Sans/FiraSans-Regular.ttf");
+}
+
 @layer base {
+  html {
+    font-family: Fira Sans, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
   img {
     max-width: none;
+  }
+  a {
+    box-shadow: inset 0 0 0 0 white;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  a:hover {
+    box-shadow: inset 100px 0 0 0 inherit;
+    color: white;
   }
 }
 
 @layer components {
-  .logo {
+  .app {
+    @apply w-full h-full;
+  }
+  .app .navbar {
+    @apply w-full h-32 flex items-center justify-between;
+  }
+  .app .navbar .divs {
+    @apply w-full h-full flex items-center justify-evenly
+    text-2xl font-bold;
+  }
+  .app .navbar .divs a {
+    box-shadow: inset 0 0 0 0 white;
+    color: rgb(12 21 107);
+  }
+  .app .navbar .divs a:hover {
+    box-shadow: inset 100px 0 0 0 rgb(12 21 107);
+    color: white;
+  }
+  .app .navbar .logo {
     @apply object-contain h-full;
+  }
+  .app .wrapper {
+    @apply w-full h-full mt-6 max-w-md mx-auto flex flex-col gap-6;
+  }
+  .app .wrapper .basic-container {
+    @apply w-full p-4 flex flex-col border-[1px] border-gray-400 rounded-md bg-white shadow-md;
+  }
+  .intro-title {
+    @apply text-2xl font-bold;
+    color: rgb(12 21 107);
+  }
+  .intro-sub {
+    @apply text-lg font-medium text-gray-500;
+  }
+  .intro-desc {
+    @apply text-base font-normal text-gray-600 mt-4;
+  }
+  .portfolio {
+    @apply w-full flex flex-wrap gap-4 p-4 justify-center mt-4;
+  }
+  .portfolio .portfolio-card {
+    @apply w-[128px] h-[128px] rounded-sm shadow-md bg-white border-[1px] border-gray-400;
+  }
+  .portfolio .portfolio-card:hover {
+    transform: scale(1.1);
+    transition: transform .3s bezier(.25,.8,.25,1);
+    cursor: pointer;
   }
 }
