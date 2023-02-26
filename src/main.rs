@@ -32,6 +32,7 @@ fn switch(routes: Routes) -> Html {
 fn main_app() -> Html {
     html! {
         <BrowserRouter>
+            <div id="triangle-up"></div>
             <Switch<Routes> render={switch} />
         </BrowserRouter>
     }
