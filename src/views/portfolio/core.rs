@@ -1,6 +1,9 @@
 use yew::prelude::*;
 
-use crate::components::{app_navbar::AppNavbar, portfolio_card::PortfolioCard};
+use crate::components::{
+  app_navbar::AppNavbar,
+  portfolio::portfolio_card::PortfolioCard,
+};
 
 pub struct Portfolio;
 

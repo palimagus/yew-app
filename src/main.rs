@@ -23,7 +23,7 @@ enum Routes {
 
 fn switch(routes: Routes) -> Html {
   match routes {
-    Routes::Portfolio => html! { <crate::views::portfolio::Portfolio /> },
+    Routes::Portfolio => html! { <crate::views::portfolio::core::Portfolio /> },
     _ => html! { <crate::views::app::App /> },
   }
 }
